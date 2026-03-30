@@ -1,5 +1,10 @@
+import ProtectedRoute from "@/components/ProtectedRoute";
 import DashboardClient from "@/components/DashboardClient";
 
 export default function DashboardPage() {
-  return <DashboardClient />;
+  return (
+    <ProtectedRoute>
+      <DashboardClient />
+    </ProtectedRoute>
+  );
 }

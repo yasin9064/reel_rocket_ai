@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useAuth } from "@/contexts/AuthContext";
+import SignInButton from "./SignInButton";
+import UserMenu from "./UserMenu";
 
 export default function Navbar() {
+  const { user, loading } = useAuth();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,12 +51,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
-            <Link
-              href="/dashboard"
-              className="px-4 py-2 rounded-lg text-sm font-semibold bg-purple-600 hover:bg-purple-500 text-white transition-colors"
-            >
-              Start Free
-            </Link>
+            {!loading && (user ? <UserMenu /> : <SignInButton />)}
           </div>
         </div>
       </div>
