@@ -104,7 +104,8 @@ export default function DashboardClient() {
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              History
+              <span className="hidden sm:inline">History</span>
+              <span className="sm:hidden">Hist.</span>
               <span className="px-1.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 text-xs">
                 {history.length}
               </span>

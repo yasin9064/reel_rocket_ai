@@ -25,7 +25,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={result.hook} />
           </div>
         </div>
-        <p className="text-lg font-medium text-white leading-relaxed pr-20">
+        <p className="text-lg font-medium text-white leading-relaxed sm:pr-20">
           {result.hook}
         </p>
       </div>
@@ -40,7 +40,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={scriptText} />
           </div>
         </div>
-        <div className="flex flex-col gap-3 pr-20">
+        <div className="flex flex-col gap-3 sm:pr-20">
           {result.script.map((seg, i) => (
             <div key={i} className="flex gap-3">
               <span className="text-zinc-500 text-sm font-mono whitespace-nowrap">
@@ -62,7 +62,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={result.shots.join("\n")} />
           </div>
         </div>
-        <ul className="flex flex-col gap-2 pr-20">
+        <ul className="flex flex-col gap-2 sm:pr-20">
           {result.shots.map((shot, i) => (
             <li key={i} className="flex gap-2 text-zinc-300">
               <span className="text-purple-400">•</span>
@@ -82,7 +82,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={result.caption} />
           </div>
         </div>
-        <p className="text-zinc-200 leading-relaxed pr-20">{result.caption}</p>
+        <p className="text-zinc-200 leading-relaxed sm:pr-20">{result.caption}</p>
       </div>
 
       {/* Hashtags */}
@@ -95,7 +95,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={hashtagString} />
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 pr-20">
+        <div className="flex flex-wrap gap-2 sm:pr-20">
           {result.hashtags.map((tag, i) => (
             <span
               key={i}
@@ -117,7 +117,7 @@ export default function ScriptOutput({ result }: ScriptOutputProps) {
             <CopyButton text={result.cta} />
           </div>
         </div>
-        <p className="text-zinc-200 leading-relaxed pr-20">{result.cta}</p>
+        <p className="text-zinc-200 leading-relaxed sm:pr-20">{result.cta}</p>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export default function LandingCTA() {
         </p>
         <Link
           href="/dashboard"
-          className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white transition-all shadow-lg shadow-purple-900/40"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-lg font-semibold bg-purple-600 hover:bg-purple-500 text-white transition-all shadow-lg shadow-purple-900/40 w-full sm:w-auto"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
