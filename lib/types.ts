@@ -34,3 +34,13 @@ export interface GenerateScriptResponse {
   hashtags: string[];
   cta: string;
 }
+
+export interface ScriptHistoryItem {
+  id: string;
+  createdAt: string;
+  topic: string;
+  platform: Platform;
+  style: ScriptStyle;
+  duration: Duration;
+  result: GenerateScriptResponse;
+}

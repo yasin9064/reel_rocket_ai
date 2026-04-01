@@ -33,9 +33,16 @@ const DURATIONS: { value: Duration; label: string }[] = [
 
 interface ScriptFormProps {
   onResult: (result: GenerateScriptResponse) => void;
+  onScriptGenerated?: (
+    result: GenerateScriptResponse,
+    topic: string,
+    platform: string,
+    style: string,
+    duration: number
+  ) => void;
 }
 
-export default function ScriptForm({ onResult }: ScriptFormProps) {
+export default function ScriptForm({ onResult, onScriptGenerated }: ScriptFormProps) {
   const [topic, setTopic] = useState("");
   const [niche, setNiche] = useState("");
   const [targetAudience, setTargetAudience] = useState("");
@@ -82,6 +89,9 @@ export default function ScriptForm({ onResult }: ScriptFormProps) {
 
       const data: GenerateScriptResponse = await res.json();
       onResult(data);
+      if (onScriptGenerated) {
+        onScriptGenerated(data, topic.trim(), platform, style, duration);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "An unexpected error occurred.");
     } finally {
